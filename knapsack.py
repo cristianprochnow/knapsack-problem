@@ -9,6 +9,7 @@ BACKPACK_SIZE = 15
 
 # (weight, value)[]
 items_for_backpack = [(2, 3), (3, 4), (4, 5), (5, 8), (9, 10), (4, 7), (2, 6), (1, 2)]
+items_inserted = []
 
 def fitness(element):
     total_value = 0
@@ -68,11 +69,22 @@ def evolve(population):
 
 population = build_population()
 greatest = []
+has_repeated_items = False
 
-for generation in range(GENERATIONS):
-    population = evolve(population)
-    greatest = max(population, key=lambda element: fitness(element))
+for item in items_for_backpack:
+    if (item[0], item[1]) in items_inserted:
+        has_repeated_items = True
+        break
+    else:
+        items_inserted.append((item[0], item[1]))
 
-    print(f"Geração {generation + 1}: Melhor Aptidão = {fitness(greatest)}")
+if has_repeated_items:
+    print(f"As opções para a mochila têm de ser únicas.")
+else:
+    for generation in range(GENERATIONS):
+        population = evolve(population)
+        greatest = max(population, key=lambda element: fitness(element))
 
-print("Melhor Solução: ", greatest)
+        print(f"Geração {generation + 1}: Melhor Aptidão = {fitness(greatest)}")
+
+    print("Melhor Solução: ", greatest)
