@@ -13,20 +13,22 @@ Como o Algoritmo Genético em Bits pode ser aplicado: Cada indivíduo (genoma) �
 
 ## Parâmetros do problema
 
-* TAMANHO_POPULACAO = 10
-* TAMANHO_GENOMA = 8
-* TAXA_MUTACAO = 0.1
-* GERACOES = 20
-* CAPACIDADE_MOCHILA = 15
+```python
+POPULATION_SIZE = 10
+GENOME_SIZE = 8
+MUTATION_SIZE = 0.1
+GENERATIONS = 20
+BACKPACK_SIZE = 15
+```
 
 ## Definindo os itens
 
 Cada item tem um peso e um valor (peso, valor)
 
 ```python
-itens = [(2, 3), (3, 4), (4, 5), (5, 8), (9, 10), (4, 7), (2, 6), (1, 2)]
+items_for_backpack = [(2, 3), (3, 4), (4, 5), (5, 8), (9, 10), (4, 7), (2, 6), (1, 2)]
 ```
 
 # Disclaimer
 
-Código base e documentação produzida pelo professor Claudinei Dias, da discplina de Inteligência Artifial no Centro Universitário Católica de Santa Catarina em Joinville.
+Adaptação minha, mas código e documentação iniciais oferecidos pelo professor Claudinei Dias, da discplina de Inteligência Artifial no Centro Universitário Católica de Santa Catarina em Joinville. Ambos itens iniciais feitos em aula sobre o assunto.
